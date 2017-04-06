@@ -1,0 +1,48 @@
+user-item:nth-child(even) .userinfo {
+    background-color: #000;
+}
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;     
+    border-bottom: 1px solid #afafaf;
+    padding-bottom: 15px;
+}
+.diag i {
+    font-size: 60px;
+    color: red;
+}
+
+.search {
+    padding: 9px;
+    width: 100%;
+    margin: 0 auto;
+}
+.searchContainer{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+.headinfo {
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    align-content: center;
+    margin-left: 20px;
+}
+.headinfo p {
+    text-align: center;
+}
+.headinfo p {
+    margin: 20px 20px;
+
+}
+.headuserName {
+    flex: 1;
+} 

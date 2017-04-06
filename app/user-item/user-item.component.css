@@ -1,0 +1,56 @@
+
+.userinfo{    
+    display:flex;
+    padding: 10px;
+}
+.userinfo p { 
+    text-align: center;
+}
+
+.picture>img {
+    border-radius: 50%;
+}
+
+.addInfo {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;    
+    transition: .5s ease-in-out;
+    text-align: left;
+    display: flex;
+    border-top: 1px solid transparent;
+    max-height: 0;
+}
+.show{
+    display: flex;
+    max-height: 300px;
+    transition:  .5s ease-in-out;
+    border-top: 1px solid  gray;
+    padding-top: 20px;
+}
+.info {
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    align-content: center;
+    margin-left: 20px;
+}
+.info p {
+    text-align: center;
+}
+.info p {
+    margin: 20px 20px;
+
+}
+.ng2-pagination li {
+    user-select: none;    
+}
+.ng2-pagination>li:hover {
+    cursor: pointer;
+}
+.userName {
+    flex: 1;
+} 
+.addInfoText {
+    flex-shrink: 0;
+}

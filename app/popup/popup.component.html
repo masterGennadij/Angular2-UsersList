@@ -1,0 +1,20 @@
+<div *ngIf="ErrorMessageIsVisible" class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Gender range</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Female - <span class="female">{{female}} </span>. 
+                    Male - <span class="male">{{male}} </span>
+                </p>
+                <div class="circle"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-modal" (click)="hideErrorMsg()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

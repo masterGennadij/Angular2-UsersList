@@ -1,0 +1,35 @@
+.btn-modal{
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+}
+#myModal {    
+    position: absolute;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.modal-dialog {    
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+.modal-title {
+    padding: 15px;
+    border-bottom: 1px solid white;
+}
+span.male{
+  color:  #30bae7;
+}
+span.female{
+  color:   palevioletred;
+}
+.modal-footer {
+    margin-top: 20px;
+}
