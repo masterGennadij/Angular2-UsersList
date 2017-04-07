@@ -64,3 +64,28 @@ h1{
 .headuserName {
     flex: 1;
 } 
+
+
+
+.tooltip::after {
+	background: rgba(158,158,158,.8);
+    box-sizing: border-box;
+	
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color:  #fff;
+	content: attr(data-tooltip); 
+	width: 100%;
+    left:0;
+    top: -30px;
+	opacity: 0; 
+	padding: 3px 7px;
+	position: absolute;
+	visibility: hidden; 
+	text-transform: initial;		
+	transition: all 0.4s ease-in-out; 
+}
+		
+.tooltip:hover::after {
+	opacity: 1; 
+	visibility: visible;
+}

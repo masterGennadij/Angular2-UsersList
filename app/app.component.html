@@ -1,24 +1,24 @@
 <div class="wrapper">
-<popup > </popup>
+        <popup > </popup>
         <h1 >{{title}}</h1>
         <div class="controls">
                 <div class="searchContainer">
                         <input type="text" class="search" placeholder="Search by name..." [(ngModel)]="name" #searchInput (input)="filterItem(searchInput.value)">
                 </div>               
-                 <div class="buttonContainer">
-                        <button class="diag " (click)="show();"><i class="material-icons">insert_chart</i></button>
-                        <button class="diag " (click)="resetUsers();"><i class="material-icons">refresh</i></button>
-                 </div>
+                <div class="buttonContainer">
+                        <button class="diag tooltip" data-tooltip="Show chart" (click)="show();"><i class="material-icons">insert_chart</i></button>
+                        <button class="diag tooltip" data-tooltip="Refresh" (click)="resetUsers();"><i class="material-icons">refresh</i></button>
+                </div>
         </div>
-    <div class="userinfo"> 
- <p class="headuserName">Photo</p> 
-    <div class="headinfo">    
-        <p class="headuserName">First Name</p>
-        <p class="headuserName">Last Name</p>
-        <p class="headuserName">Email</p>        
-         <p class="headuserName">Details</p>                   
-    </div> 
-    </div>
+        <div class="userinfo"> 
+                <p class="headuserName">Photo</p> 
+                <div class="headinfo">    
+                        <p class="headuserName">First Name</p>
+                        <p class="headuserName">Last Name</p>
+                        <p class="headuserName">Email</p>        
+                        <p class="headuserName">Details</p>                   
+                 </div> 
+        </div>
         <user-item  (hideAll)="onChanged($event)" *ngFor="let user of usersFiltered | paginate: { itemsPerPage: 10, currentPage: p }" [user]="user" ></user-item>
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
