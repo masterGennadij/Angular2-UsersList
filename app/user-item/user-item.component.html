@@ -6,7 +6,7 @@
         <p class="userName">{{user.name.first}}</p>
         <p class="userName">{{user.name.last}}</p>
         <p class="userName"><a href="mailto:{{user.email}}">{{user.email}}</a></p> 
-        <button (click)="showDetails();  "> <i class="material-icons">{{(active)?'remove':'add'}}</i> </button>
+        <button (click)="hide(); showDetails();  "> <i class="material-icons">{{(active)?'remove':'add'}}</i> </button>
             <div class="addInfo"  [class.show]="active" >
                 <div class="pictureBig" >
                     <img src="{{user.picture.large}}">

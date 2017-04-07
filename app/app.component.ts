@@ -1,7 +1,8 @@
-import  { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import  { Component, OnInit, ViewChild, Output, EventEmitter, ViewChildren, QueryList } from '@angular/core';
 import { UserItemService } from './shared/user-item.service';
  import {PaginatePipe,  PaginationService} from 'ng2-pagination';
 import { ErrorMessage } from './popup/popup.component';
+import { UserItemComponent } from './user-item/user-item.component';
 
 @Component({
     moduleId: module.id,
@@ -19,7 +20,10 @@ export class AppComponent implements OnInit {
     percent: number = 0;
     popup: boolean = false;
      toggle = new EventEmitter;
+      value: boolean = false;
 @ViewChild(ErrorMessage) errorMessage: ErrorMessage
+@ViewChildren(UserItemComponent) userItemComponent: QueryList<UserItemComponent>;
+
     constructor(private userItemService: UserItemService) {    
     }
     ngOnInit() {     
@@ -49,5 +53,8 @@ export class AppComponent implements OnInit {
     usersCopy(){
         this.usersFiltered = Object.assign([], this.users);
     }
-    
+    onChanged(event: any){
+       this.userItemComponent.forEach(item=>(item.user==event)?'' : item.active = false);     
+       
+    }
 }

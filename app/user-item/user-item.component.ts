@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 
 @Component({
@@ -9,11 +9,16 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 })
 export class UserItemComponent{
+    @Output() hideAll = new EventEmitter();
     active: boolean = false;
-     @Input() user: string[];
-
+    toggle: boolean = false;
+     @Input() user: any;
+     @Input() value: boolean;
      showDetails(){      
         this.active = !this.active;
-
+        this.toggle = !this.toggle;
      }
+     hide() {
+        this.hideAll.emit(this.user);
+    }
 }

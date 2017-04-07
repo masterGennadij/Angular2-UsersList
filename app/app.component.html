@@ -10,19 +10,16 @@
                         <button class="diag " (click)="resetUsers();"><i class="material-icons">refresh</i></button>
                  </div>
         </div>
-        <div class="userinfo">
-    <div class="picture"  >
-        <img src="">
-    </div>
-    <div class="headinfo"> 
-        <p class="headuserName">photo</p>     
-        <p class="headuserName">name.first</p>
-        <p class="headuserName">name.last</p>
-        <p class="headuserName">email</p>        
-         <p class="headuserName">details</p>                   
+    <div class="userinfo"> 
+ <p class="headuserName">Photo</p> 
+    <div class="headinfo">    
+        <p class="headuserName">First Name</p>
+        <p class="headuserName">Last Name</p>
+        <p class="headuserName">Email</p>        
+         <p class="headuserName">Details</p>                   
     </div> 
-</div>
-        <user-item   *ngFor="let user of usersFiltered | paginate: { itemsPerPage: 10, currentPage: p }" [user]="user" ></user-item>
+    </div>
+        <user-item  (hideAll)="onChanged($event)" *ngFor="let user of usersFiltered | paginate: { itemsPerPage: 10, currentPage: p }" [user]="user" ></user-item>
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
   

@@ -9,6 +9,7 @@ h1{
     text-align: center;     
     border-bottom: 1px solid #afafaf;
     padding-bottom: 15px;
+     font-size: 3rem;
 }
 .diag i {
     font-size: 60px;
@@ -36,12 +37,29 @@ h1{
     align-content: center;
     margin-left: 20px;
 }
-.headinfo p {
+.userinfo{
+    display: flex;
+    padding: 10px;
+     font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #afafaf;
+    border-top: 1px solid #afafaf;
+}
+.userinfo>p{
+    min-width: 72px;
+    margin: 0;
+    align-self: center;
     text-align: center;
 }
+.headinfo p:last-child{
+    max-width: 64px;
+    margin: 0;
+    align-self: center;
+}
 .headinfo p {
+  
     margin: 20px 20px;
-
+    text-align: center;
 }
 .headuserName {
     flex: 1;
