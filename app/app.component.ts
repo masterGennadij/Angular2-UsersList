@@ -1,6 +1,6 @@
 import  { Component, OnInit, ViewChild, Output, EventEmitter, ViewChildren, QueryList } from '@angular/core';
 import { UserItemService } from './shared/user-item.service';
- import {PaginatePipe,  PaginationService} from 'ng2-pagination';
+import {PaginatePipe,  PaginationService} from 'ng2-pagination';
 import { ErrorMessage } from './popup/popup.component';
 import { UserItemComponent } from './user-item/user-item.component';
 
@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
     }
     ngOnInit() {     
         this.userItemService.getUsers().then(users=>this.users = users).then(users=>this.usersFiltered = users); 
-
      }
           
     resetUsers(){
