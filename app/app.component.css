@@ -5,11 +5,20 @@ user-item:nth-child(even) .userinfo {
     max-width: 1000px;
     margin: 0 auto;
 }
-h1{
-    text-align: center;     
+header{
+    display: flex;
     border-bottom: 1px solid #afafaf;
-    padding-bottom: 15px;
+    padding-top: 15px;
+}
+a.logo{ 
+    
+}
+header h1{
+    padding-left: 10%;    
+    /*border-bottom: 1px solid #afafaf;
+    padding-bottom: 15px;*/
      font-size: 3rem;
+     flex-grow: 1;
 }
 .diag i {
     font-size: 60px;

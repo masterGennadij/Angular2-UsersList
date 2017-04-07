@@ -20,6 +20,7 @@
     display: flex;
     border-top: 1px solid transparent;
     max-height: 0;
+    justify-content: space-between;
 }
 .show{
     display: flex;
@@ -54,7 +55,12 @@
 .addInfoText {
     flex-shrink: 0;
 }
-
+.addInfoText p {
+    text-align: left;
+}
+.addInfoAbout {
+    max-width: 500px;
+}
 
 .tooltip::after {
 	background: rgba(158,158,158,.8);
@@ -77,4 +83,7 @@
 .tooltip:hover::after {
 	opacity: 1; 
 	visibility: visible;
+}
+span.bold{
+    font-weight: bold;
 }

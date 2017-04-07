@@ -14,13 +14,15 @@ import { UserItemComponent } from './user-item/user-item.component';
 export class AppComponent implements OnInit {
     users: any;
     usersFiltered: any;
-    title:string = 'Random Users';
+    title:string = 'Get Random Users';
     male: number = 0;
     female: number = 0;
     percent: number = 0;
     popup: boolean = false;
      toggle = new EventEmitter;
-      value: boolean = false;
+     value: boolean = false;
+     sortByName:boolean = false;
+     sortByNameLast:boolean = false;
 @ViewChild(ErrorMessage) errorMessage: ErrorMessage
 @ViewChildren(UserItemComponent) userItemComponent: QueryList<UserItemComponent>;
 
@@ -28,7 +30,9 @@ export class AppComponent implements OnInit {
     }
     ngOnInit() {     
         this.userItemService.getUsers().then(users=>this.users = users).then(users=>this.usersFiltered = users); 
-          }
+
+     }
+          
     resetUsers(){
         this.userItemService.getUsers().then(users=>this.users = users).then(users=>this.usersFiltered = users);
     }
@@ -57,4 +61,57 @@ export class AppComponent implements OnInit {
        this.userItemComponent.forEach(item=>(item.user==event)?'' : item.active = false);     
        
     }
+    sortFirstName() {
+         if (!this.sortByName) {       
+        this.usersFiltered.sort( function(name1: any, name2: any) {
+	    if ( name1.name.first < name2.name.first ){
+	    	return -1;
+	    }else if( name1.name.first > name2.name.first ){
+	        return 1;
+	    }else{
+	    	return 0;	
+	    }
+	});
+    this.sortByName = !this.sortByName;
+    this.sortByNameLast = false;
+    
+    } else {
+          this.usersFiltered.sort( function(name1: any, name2: any) {
+	    if ( name1.name.first < name2.name.first ){
+	    	return 1;
+	    }else if( name1.name.first > name2.name.first ){
+	        return -1; 
+	    }else{
+	    	return 0;	
+	    }
+	});
+  this.sortByName = !this.sortByName;      
+    }
+}
+    sortLastName() {
+         if (!this.sortByNameLast) {       
+        this.usersFiltered.sort( function(name1: any, name2: any) {
+	    if ( name1.name.last < name2.name.last ){
+	    	return -1;
+	    }else if( name1.name.last > name2.name.last ){
+	        return 1;
+	    }else{
+	    	return 0;	
+	    }
+	});
+    this.sortByNameLast = !this.sortByNameLast;
+    this.sortByName = false;
+    } else {
+          this.usersFiltered.sort( function(name1: any, name2: any) {
+	    if ( name1.name.last < name2.name.last ){
+	    	return 1;
+	    }else if( name1.name.last > name2.name.last ){
+	        return -1;
+	    }else{
+	    	return 0;	
+	    }
+	});
+  this.sortByNameLast = !this.sortByNameLast;      
+    }
+}
 }

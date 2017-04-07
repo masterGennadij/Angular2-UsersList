@@ -1,20 +1,24 @@
 <div class="wrapper">
         <popup > </popup>
-        <h1 >{{title}}</h1>
+        <header>
+               <a class="logo" href="#"> <img src="../img/logo.png"></a>
+                <h1 >{{title}}</h1>
+        </header>
         <div class="controls">
-                <div class="searchContainer">
+                <div class="searchContainer" >
                         <input type="text" class="search" placeholder="Search by name..." [(ngModel)]="name" #searchInput (input)="filterItem(searchInput.value)">
                 </div>               
                 <div class="buttonContainer">
                         <button class="diag tooltip" data-tooltip="Show chart" (click)="show();"><i class="material-icons">insert_chart</i></button>
                         <button class="diag tooltip" data-tooltip="Refresh" (click)="resetUsers();"><i class="material-icons">refresh</i></button>
+                        
                 </div>
         </div>
         <div class="userinfo"> 
                 <p class="headuserName">Photo</p> 
                 <div class="headinfo">    
-                        <p class="headuserName">First Name</p>
-                        <p class="headuserName">Last Name</p>
+                        <p class="headuserName">First Name <button class="tooltip" [attr.data-tooltip]="(!sortByName)?'A-Z':'Z-A'" (click)="sortFirstName();"><i class="material-icons">{{(sortByName)?'arrow_drop_up':'arrow_drop_down'}}</i></button></p>
+                        <p class="headuserName">Last Name<button class="tooltip" [attr.data-tooltip]="(!sortByNameLast)?'A-Z':'Z-A'" (click)="sortLastName();"><i class="material-icons">{{(sortByNameLast)?'arrow_drop_up':'arrow_drop_down'}}</i></button></p>
                         <p class="headuserName">Email</p>        
                         <p class="headuserName">Details</p>                   
                  </div> 
